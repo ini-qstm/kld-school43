@@ -1,0 +1,125 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@font-face {
+    font-family: "Monocraft";
+    src: url(minecraftfont/Monocraft.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} */
+ :root{
+    --color_yellow: yellow;
+    --color_pink: pink;
+    --color_gray: #404146;
+    --color_white: white;
+    --text_standart-font-size: 17px;
+    --text_small-font-size: 10px;
+    --text_medium-font-size: 30px;
+    --text_big-font-size: 5vw;
+    --grid_standart-grid: auto-flow / 0.3fr 1fr;
+ }
+ html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    
+}
+body {
+    margin:0;
+    background-color: var(--color_gray);
+    padding: 0 2%;
+}
+h1,h2,h3,h4,p{
+    color: var(--color_white);
+}
+h1{
+    font-size: var(--text_big-font-size);   
+    font-weight: bolder;
+}
+h3{
+    font-size: var(--text_medium-font-size);
+    font-weight: bold;
+}
+p{
+    font-size: var(--text_standart-font-size);
+}
+.italic-text *{
+    font-style: italic;
+}
+.yellow-text{
+    color: var(--color_yellow);
+}
+.small-text{
+    font-size: var(--text_small-font-size);
+}
+
+img[class="full-width"]{
+    width: 100%;
+    height: auto;
+}
+header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+    margin-bottom: 10vh;
+}
+[type="button"] {
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    padding: 0 40px;
+}
+.header-text{
+    margin-bottom: 5vh;
+}
+.header__row{
+    display: grid;
+    align-items: center;
+    column-gap: 5vw;
+}
+.header__row *{
+    margin: auto;
+}
+.header__row:first-child{
+    grid-template-columns: 1fr 0.3fr;
+}
+.header__row:last-child{
+    grid-template-columns: 0.3fr 1fr;
+}
+
+.main__section{
+    margin: 5vh auto;
+    width: 95%;
+}
+.section_about-school{
+    display: grid;
+    grid: var(--grid_standart-grid);
+}
+
+.header-buttons{
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1;
+    grid-template-columns: auto auto;
+    gap: 3vw;
+}
+.header-buttons>button{
+    border: 2px solid var(--color_pink);
+    width: auto;
+}
+.header-buttons>button:first-child{
+    background-color: var(--color_pink);
+    color: var(--color_white);
+}
+.header-buttons>button:last-child{
+    background-color: rgba(0,0,0,0);
+}
+.header-buttons>button:last-child p{
+    color: var(--color_pink);
+}
+
+.about-school__body{
+    max-width: 30%;
+}
