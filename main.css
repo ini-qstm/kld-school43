@@ -8,14 +8,14 @@
 } */
  :root{
     --color_yellow: yellow;
-    --color_pink: pink;
-    --color_gray: #404146;
+    --color_pink: #eb1591;
+    --color_gray: #302b2e;
     --color_white: white;
     --text_standart-font-size: 17px;
     --text_small-font-size: 10px;
-    --text_medium-font-size: 30px;
+    --text_medium-font-size: 40px;
     --text_big-font-size: 5vw;
-    --grid_standart-grid: auto-flow / 0.3fr 1fr;
+    --grid_standart-grid: auto-flow / 0.4fr 1fr;
  }
  html{
     scroll-behavior: smooth;
@@ -25,7 +25,7 @@
 body {
     margin:0;
     background-color: var(--color_gray);
-    padding: 0 2%;
+    padding: 0 20%;
 }
 h1,h2,h3,h4,p{
     color: var(--color_white);
@@ -47,10 +47,28 @@ p{
 .yellow-text{
     color: var(--color_yellow);
 }
-.small-text{
+*[class$="small-text"], *[class$="small-text"] *{
     font-size: var(--text_small-font-size);
 }
-
+*[class$="standart-text"]{
+    font-size: var(--text_standart-font-size);
+}
+*[class$="medium-text"]{
+    font-size: var(--text_medium-font-size);
+}
+*[class$="big-text"]{
+    font-size: var(--text_big-font-size);
+    margin:0;
+}
+img{    
+    border-radius: 2px; /* скругление углов (опционально) */
+}
+div[class$="_img"]{
+    width: 95%;
+    justify-self: end;
+    max-width: 956px;
+    border: 1px solid var(--color_yellow);
+}
 img[class="full-width"]{
     width: 100%;
     height: auto;
@@ -59,7 +77,6 @@ header{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 95%;
     margin-bottom: 10vh;
 }
 [type="button"] {
@@ -73,30 +90,33 @@ header{
 }
 .header-text{
     margin-bottom: 5vh;
-}
-.header__row{
-    display: grid;
-    align-items: center;
-    column-gap: 5vw;
+    width: 100%;
 }
 .header__row *{
-    margin: auto;
-}
-.header__row:first-child{
-    grid-template-columns: 1fr 0.3fr;
-}
-.header__row:last-child{
-    grid-template-columns: 0.3fr 1fr;
+    margin: 0;
 }
 
-.main__section{
-    margin: 5vh auto;
-    width: 95%;
+.header__row:first-child *{
+    text-align: start;
 }
-.section_about-school{
-    display: grid;
-    grid: var(--grid_standart-grid);
+.header__row:last-child *{
+    text-align: end;
 }
+
+/* .header__background{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 50%;
+} */
+/* .header__background svg{
+    width: 100px;
+    height: 100px;
+}
+.header__background path{
+    fill: var(--color_yellow);
+} */
 
 .header-buttons{
     display: grid;
@@ -120,6 +140,34 @@ header{
     color: var(--color_pink);
 }
 
-.about-school__body{
-    max-width: 30%;
+.main__section{
+    margin: 5vh auto;
+}
+.section_about-school{
+    display: grid;
+    grid: var(--grid_standart-grid);
+    gap: 3%;
+    align-items: center;
+    justify-items: center;
+}
+
+table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+table tr{
+    height: auto;
+    /* border: 1px solid var(--color_yellow); */
+}
+.about-school__sheet table td{
+    padding: 5px 25px;
+    /* display: grid;
+    grid-template-columns: auto auto; */
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+}
+.about-school__sheet table td p{
+    text-align: center;
 }
