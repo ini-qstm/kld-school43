@@ -24,6 +24,7 @@
 }
 body {
     margin:0;
+    margin-top: 10vh;
     background-color: var(--color_gray);
     padding: 0 20%;
 }
@@ -60,8 +61,12 @@ p{
     font-size: var(--text_big-font-size);
     margin:0;
 }
+main, .header-buttons, .header-text{
+    position: relative;
+    z-index: 10;
+}
 img{    
-    border-radius: 2px; /* скругление углов (опционально) */
+    border-radius: 2px;
 }
 div[class$="_img"]{
     width: 95%;
@@ -103,13 +108,27 @@ header{
     text-align: end;
 }
 
-/* .header__background{
+.header__background{
     position: absolute;
     top:0;
     left:0;
-    width: 100%;
-    height: 50%;
-} */
+    width: max-content;
+    z-index: 5;
+}
+
+img[id*="header__figure"]{
+    max-width: 1000px;
+    height: auto;
+    opacity: 60%;
+    /* filter: blur(10); */
+}
+#header__figure1{
+    rotate: 70deg;
+}
+#header__figure2{
+    rotate: 150deg;
+    scale: 0.5;
+}
 /* .header__background svg{
     width: 100px;
     height: 100px;
@@ -143,6 +162,10 @@ header{
 .main__section{
     margin: 5vh auto;
 }
+/* .main__section h3:active {
+    opacity: 0;
+    transform: translateX(-100%);
+} */
 .section_about-school{
     display: grid;
     grid: var(--grid_standart-grid);
@@ -171,3 +194,15 @@ table tr{
 .about-school__sheet table td p{
     text-align: center;
 }
+
+@keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+  
