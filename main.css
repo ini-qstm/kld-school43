@@ -16,6 +16,13 @@
     --text_medium-font-size: 40px;
     --text_big-font-size: 5vw;
     --grid_standart-grid: auto-flow / 0.4fr 1fr;
+
+    --header-z-index:10;
+
+    --img-btn-width: 30px;
+    --img-height: calc((var(--img-width)/1.77778));
+    --img-border-width:0; /*скрипт screenshots.js устанавливает значение*/
+    --img-width:0; /*скрипт slider.js устанавливает значение*/
  }
  html{
     scroll-behavior: smooth;
@@ -26,7 +33,6 @@ body {
     margin:0;
     margin-top: 10vh;
     background-color: var(--color_gray);
-    padding: 0 20%;
 }
 h1,h2,h3,h4,p{
     color: var(--color_white);
@@ -158,6 +164,9 @@ img[id*="header__figure"]{
 .header-buttons>button:last-child p{
     color: var(--color_pink);
 }
+header, .main__section{
+    padding: 0 20%;
+}
 
 .main__section{
     margin: 5vh auto;
@@ -172,6 +181,10 @@ img[id*="header__figure"]{
     gap: 3%;
     align-items: center;
     justify-items: center;
+    background-color: var(--color_white);
+}
+.section_about-school p, .section_about-school h3{
+    color: var(--color_gray);
 }
 
 table{
@@ -194,6 +207,136 @@ table tr{
 .about-school__sheet table td p{
     text-align: center;
 }
+#content-slider{
+    padding: 0;
+}
+#slideBody{
+    position: relative;
+    width: var(--img-width);
+    z-index: var(--header-z-index)+2;
+    /* Чтобы во время перетаскивания слайда ничего не выделить внутри него */
+    user-select: none;
+    /* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
+    touch-action: pan-y;
+}
+.slide{
+    max-width: 95%;
+    min-width: 95%;
+    border-radius: 20px;
+    border: var(--img-border-width) var(--standart-grey) solid;
+    width: var(--img-width);
+    height: var(--img-height);
+    /* делаем этот элемент блочным, чтобы убрать лишнее пространство вокруг картинок */
+    display: block;
+    pointer-events: none;
+    /* Чтобы слайды не сжимались */
+    flex-shrink: 0;
+    margin: auto;
+}
+#sliderContainer{
+    width: var(--img-width);
+    border-radius: 25px;
+    overflow: hidden;
+    margin: auto;
+}
+#slider{
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    scroll-snap-type: y mandatory;
+}
+.img-container{
+    /* display: inline-block; */
+    scroll-snap-align: start;
+}
+.img-btn{
+    position: absolute;
+    display: flex;
+    border-radius: 360px;
+    background-color:#393844d0;
+    width: var(--img-btn-width);
+    height: var(--img-btn-width);
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    z-index: calc(var(--header-z-index) + 3);
+    margin:0;
+}
+#leftBtn{
+    left: calc(var(--img-btn-width) + (var(--img-btn-width)/2));
+    top: calc(var(--img-height)/2);
+}
+#rightBtn{
+    right: calc(var(--img-btn-width) + (var(--img-btn-width)/2));
+    top: calc(var(--img-height)/2);
+}
+.btn-arrow-right{
+    transform: rotate(180deg);
+}
+.btn-arrow{
+    width: auto;
+    height: calc(var(--img-btn-width) - (var(--img-btn-width)/1.8));
+}
+.img-btn:hover{
+    background-color: #44413879;
+}
+
+.shedule table{
+    width: 80%;
+}
+
+.shedule__sheet-container{
+    display: flex;
+    align-items: center;
+}
+.shedule__days{
+    text-align: end;
+}
+.shedule__days p{
+    margin-bottom: calc(100% );
+}
+.shedule table td:not([class="sheet_no-border"]){
+    border: 1px solid var(--color_yellow);
+}
+.shedule .sheet_no-border p{
+    text-align: end;
+}
+.shedule__groups .sheet_no-border p{
+    color: var(--color_white);
+    text-align: center;
+}
+.shedule table td p{
+    padding: 0 10px;
+}
+.shedule table td .sheet__main{
+    padding: 0 5%;
+}
+.sheet__main_up{
+    border-bottom: 1px solid var(--color_yellow);
+}
+
+@media (max-width:1000px){
+    #leftBtn{
+        left: calc(var(--img-btn-width));
+    }
+    #rightBtn{
+        left: calc(var(--img-width) - var(--img-btn-width)*2);
+    }
+}
+@media (max-width: 717px){
+    .slide{
+        border-radius: 12px;
+    }
+    #sliderContrainer{
+        border-radius: 12px;
+    }
+    .img-btn{
+        display: none;
+    }
+}
+
 
 @keyframes slideIn {
     from {

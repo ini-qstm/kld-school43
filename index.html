@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <link rel="icon" type="image/ " href=" "> <!-- картинку украли  -->
-    <title>жду когда скажут че сюда писать</title>
+    <title>Спортивный клуб школы 43</title>
 </head>
 <!-- я делал это за бесплатно (почти), с небольшим количеством опыта и знаний. Не судите строго-->
 <!-- и да, тут не будет никаких библиотек и чего то ещё, чистый css и html (хз почему так, видимо люблю страдать)-->
@@ -26,21 +26,41 @@
             </div> 
         </div>
         <div class="header-buttons">
-            <button type="button" class="">
-                <p class="header__button-text">тектс</p>
+            <button type="button" onclick="window.location.href='https://maou43.gosuslugi.ru/?ysclid=m8lpyaghhk199254308'" class="">
+                <p class="header__button-text">сайт школы</p>
             </button>
-            <button type="button" class="">
-                <p class="header__button-text">текст</p>
+            <button type="button" onclick="window.location.href='https://vk.com/public178644273?ysclid=m8lpzkzx4j329476240'" class="">
+                <p class="header__button-text">группа вк</p>
             </button>
         </div>
-        <div class="header__background">
+        <!-- <div class="header__background">
             <img id="header__figure1" src="images/header-figure.svg">
             <img id="header__figure2" src="images/header-figure.svg">
-        </div>
+        </div> -->
     </header>
     <main>
-        <div class="main__section">
-            <img class="full-width" src="images/photo-43-school.webp" alt="школа и че то там" loading="lazy">
+        <div class="main__section" id="content-slider">
+            <div id="sliderBody">
+                <div class="img-btn" id="leftBtn">
+                    <img src="images/icons/arrow.svg" class="btn-arrow btn-arrow-left">
+                </div>
+                <div id="sliderContainer">
+                    <div id="slider">
+                        <div class="slider__img-container">
+                            <img class="slide" src="images/photo-43-school.webp" alt="школа и че то там" loading="lazy">
+                        </div>
+                        <div class="slider__img-container">
+                            <img class="slide" src="images/photo-43-school.webp" alt="школа и че то там" loading="lazy">
+                        </div>
+                        <div class="slider__img-container">
+                            <img class="slide" src="images/photo-43-school.webp" alt="школа и че то там" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="img-btn" id="rightBtn">
+                    <img src="images/icons/arrow.svg" class="btn-arrow btn-arrow-right">
+                </div>
+            </div>
         </div>
         <div class="main__section section_about-school">
             <div class="about-school__text">
@@ -102,25 +122,25 @@
                     <!-- tr*2>td*2>div.img-container>img+div.img-ps-text-container>p -->
                     <tr>
                         <td>
-                            <div class="img-container">
-                                <img src="" alt="">
+                            <div class="sport__img-container">
+                                <img src="images/photo-43-school.webp" alt="">
                                 <div class="img-ps-text-container">
-                                    <p></p>
+                                    <p>здесь вы сможете создать новые знакомства и найти новых друзей</p>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <div class="img-container">
-                                <img src="" alt="">
+                            <div class="sport__img-container">
+                                <img src="images/photo-43-school.webp" alt="">
                                 <div class="img-ps-text-container">
-                                    <p></p>
+                                    <p>в нашем клубе вы никогда не заскучаете и всегда будете в форме</p>
                                 </div>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div class="img-container">
+                            <div class="sport__img-container">
                                 <img src="" alt="">
                                 <div class="img-ps-text-container">
                                     <p></p>
@@ -128,7 +148,7 @@
                             </div>
                         </td>
                         <td>
-                            <div class="img-container">
+                            <div class="sport__img-container">
                                 <img src="" alt="">
                                 <div class="img-ps-text-container">
                                     <p></p>
@@ -139,6 +159,211 @@
                 </table>
             </div>
         </div>
+        <div class="main__section">
+            <h3 class="about-__head">
+                <span class="italic-text">
+                    <span class="yellow-text">[</span> расписание занятий <span class="yellow-text">]</span>
+                </span>
+            </h3>
+            <div class="shedule">
+                <div class="shedule__sheet-container">
+                    <table>
+                        <tr class="shedule__groups">
+                            <td class="sheet_no-border">
+                            </td>
+                            <td class="sheet_no-border">
+                                <p>1 группа (5-7 классы)</p>
+                            </td>
+                            <td class="sheet_no-border">
+                                <p>2 группа (7-8 классы)</p>
+                            </td>
+                            <td class="sheet_no-border">
+                                <p>3 группа (9-11 классы)</p>
+                            </td>
+                        </tr>
+                        <tr> <!--понедельник-->
+                            <td class="sheet_no-border">
+                                <p>Понедельник</p>
+                            </td>
+                            <td> <!--1 группа-->
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text"></span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text"></p>
+                                </div>
+                            </td>
+                            <td> <!--2 группа-->
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text"></span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text"></p>
+                                </div>
+                            </td>
+                            <td> <!--3 группа-->
+                                <div class="sheet__main_up">
+                                    <p class="sheet__header yellow-text italic-text"><span class="small-text">14:00-14:40</span></p>
+                                    <div class="sheet__main">
+                                        <p class="sheet__standart-text">баскетбол</p>
+                                    </div>
+                                </div>
+                                <div class="sheet__main_down">
+                                    <p class="sheet__header yellow-text italic-text"><span class="small-text">19:00-21:00</span></p>
+                                    <div class="sheet__main">
+                                        <p class="sheet__standart-text">волейбол</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr> <!--вторник-->
+                            <td class="sheet_no-border">
+                                <p>Вторник</p>
+                            </td>
+                            <td>
+                                <div class="sheet__main_up">
+                                    <p class="sheet__header yellow-text italic-text"><span class="small-text">14:00-14:40</span></p>
+                                    <div class="sheet__main">
+                                        <p class="sheet__standart-text">баскетбол</p>
+                                    </div>
+                                </div>
+                                <div class="sheet__main_down">
+                                    <p class="sheet__header yellow-text italic-text"><span class="small-text">18:00-20:00</span></p>
+                                    <div class="sheet__main">
+                                        <p class="sheet__standart-text">волейбол</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text"></span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text"></span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text"></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr> <!--среда-->
+                            <td class="sheet_no-border">
+                                <p>Среда</p>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text"></span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text">19:00-20:20 </span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text">волейбол</p>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text">14:00-15:20</span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text">баскетбол</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr> <!--четверг-->
+                            <td class="sheet_no-border">
+                                <p>Четверг</p>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text"></span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text">19:00-20:20</span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text">волейбол</p>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text"></span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text"></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr> <!--пятница-->
+                            <td class="sheet_no-border">
+                                <p>Пятница</p>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text"></span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text"></p>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text">19:00-20:20</span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text">баскетбол</p>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="sheet__header yellow-text italic-text"><span class="small-text"></span></p>
+                                <div class="sheet__main">
+                                    <p class="sheet__standart-text"></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr> <!--суббота-->
+                            <td class="sheet_no-border">
+                                <p>Суббота</p>
+                            </td>
+                            <td>
+                                <div class="sheet__main_up">
+                                    <p class="sheet__header yellow-text italic-text"><span class="small-text">9:00-10:20</span></p>
+                                    <div class="sheet__main">
+                                        <p class="sheet__standart-text">баскетбол</p>
+                                    </div>
+                                </div>
+                                <div class="sheet__main_down">
+                                    <p class="sheet__header yellow-text italic-text"><span class="small-text">12:00-14:00</span></p>
+                                    <div class="sheet__main">
+                                        <p class="sheet__standart-text">волейбол</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sheet__main_up">
+                                    <p class="sheet__header yellow-text italic-text"><span class="small-text">10:00-11:00</span></p>
+                                    <div class="sheet__main">
+                                        <p class="sheet__standart-text">баскетбол</p>
+                                    </div>
+                                </div>
+                                <div class="sheet__main_down">
+                                    <p class="sheet__header yellow-text italic-text"><span class="small-text">14:00-15:20</span></p>
+                                    <div class="sheet__main">
+                                        <p class="sheet__standart-text">волейбол</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="sheet__main_up">
+                                    <p class="sheet__header yellow-text italic-text"><span class="small-text">11:00-12:00</span></p>
+                                    <div class="sheet__main">
+                                        <p class="sheet__standart-text">баскетбол</p>
+                                    </div>
+                                </div>
+                                <div class="sheet__main_down">
+                                    <p class="sheet__header yellow-text italic-text"><span class="small-text">16:00-18:00</span></p>
+                                    <div class="sheet__main">
+                                        <p class="sheet__standart-text">волейбол</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
+<script src="js/slider.js"></script>
 </html>
