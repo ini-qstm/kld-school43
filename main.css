@@ -304,13 +304,16 @@ table tr{
     background-color: #44413879;
 }
 
-.sport__img-container img{
+.sport__img-container{
     max-width: 500px;
     width: 90%;
 }
-.section_about-sport-club{
-    padding: 0 15%;
+.sport__img-container img{
+    width: 100%;
 }
+/* .section_about-sport-club{
+    padding: 0 15%;
+} */
 
 .shedule table{
     width: 80%;
