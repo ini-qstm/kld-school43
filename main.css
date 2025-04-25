@@ -15,14 +15,16 @@
     --text_small-font-size: 10px;
     --text_medium-font-size: 40px;
     --text_big-font-size: 5vw;
-    --grid_standart-grid: auto-flow / 0.4fr 1fr;
+    --grid_standart-grid: auto-flow / 0.5fr 1fr;
 
     --header-z-index:10;
 
     --img-btn-width: 30px;
-    --img-height: calc((var(--img-width)/1.77778));
     --img-border-width:0; /*скрипт screenshots.js устанавливает значение*/
+    /* не ставится картинкам (потому что размеры картинок ставятся через скрипты */
+    --img-height:0;
     --img-width:0; /*скрипт slider.js устанавливает значение*/
+    /* ------- */
  }
  html{
     scroll-behavior: smooth;
@@ -78,12 +80,18 @@ div[class$="_img"]{
     width: 95%;
     justify-self: end;
     max-width: 956px;
-    border: 1px solid var(--color_yellow);
 }
 img[class="full-width"]{
     width: 100%;
     height: auto;
 }
+.add-margin-bottom{
+    margin-bottom: 2vh;
+}
+.no-margin{
+    margin: 0;
+}
+
 header{
     display: flex;
     align-items: center;
@@ -171,17 +179,21 @@ header, .main__section{
 .main__section{
     margin: 5vh auto;
 }
+.section_military {
+    margin-bottom: 0;
+}
 /* .main__section h3:active {
     opacity: 0;
     transform: translateX(-100%);
 } */
-.section_about-school{
+.light-section{
     display: grid;
     grid: var(--grid_standart-grid);
     gap: 3%;
     align-items: center;
     justify-items: center;
     background-color: var(--color_white);
+    padding: 0 15vw;
 }
 .section_about-school p, .section_about-school h3{
     color: var(--color_gray);
@@ -225,19 +237,21 @@ table tr{
     border-radius: 20px;
     border: var(--img-border-width) var(--standart-grey) solid;
     width: var(--img-width);
-    height: var(--img-height);
+    /* height: var(--img-height); */
     /* делаем этот элемент блочным, чтобы убрать лишнее пространство вокруг картинок */
     display: block;
     pointer-events: none;
     /* Чтобы слайды не сжимались */
     flex-shrink: 0;
     margin: auto;
+    object-fit: cover;
 }
 #sliderContainer{
     width: var(--img-width);
     border-radius: 25px;
     overflow: hidden;
     margin: auto;
+    transition: width 0.5s ease;
 }
 #slider{
     height: auto;
@@ -246,9 +260,10 @@ table tr{
     display: flex;
     scroll-snap-type: y mandatory;
 }
-.img-container{
+.slider__img-container{
     /* display: inline-block; */
     scroll-snap-align: start;
+    margin: auto;
 }
 .img-btn{
     position: absolute;
@@ -267,10 +282,16 @@ table tr{
 #leftBtn{
     left: calc(var(--img-btn-width) + (var(--img-btn-width)/2));
     top: calc(var(--img-height)/2);
+    /* left: calc(var(--img-btn-width) + (var(--img-btn-width)/2));
+    top: 50%;
+    transform: translateY(-50%); */
 }
 #rightBtn{
     right: calc(var(--img-btn-width) + (var(--img-btn-width)/2));
     top: calc(var(--img-height)/2);
+    /* right: calc(var(--img-btn-width) + (var(--img-btn-width)/2));
+    top: 50%;
+    transform: translateY(-50%); */
 }
 .btn-arrow-right{
     transform: rotate(180deg);
@@ -281,6 +302,14 @@ table tr{
 }
 .img-btn:hover{
     background-color: #44413879;
+}
+
+.sport__img-container img{
+    max-width: 500px;
+    width: 90%;
+}
+.section_about-sport-club{
+    padding: 0 15%;
 }
 
 .shedule table{
@@ -316,6 +345,19 @@ table tr{
 .sheet__main_up{
     border-bottom: 1px solid var(--color_yellow);
 }
+.section_military__text p {
+    color: var(--color_gray);
+    font-size: var(--text_standart-font-size);
+}
+.section_military__img-container {
+    margin: 2%;
+    max-width: 500px;
+}
+.section_military__img img {
+    width: 90%;
+    height: auto;
+}
+
 
 @media (max-width:1000px){
     #leftBtn{
@@ -328,6 +370,7 @@ table tr{
 @media (max-width: 717px){
     .slide{
         border-radius: 12px;
+        object-fit: fill;
     }
     #sliderContrainer{
         border-radius: 12px;
